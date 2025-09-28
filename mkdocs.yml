@@ -3,15 +3,16 @@ site_name: scope-your-project-gruppe-6 – Doku
 theme:
   name: material
   language: de
+  logo: images/logo.png          # eigenes Logo in docs/images/ ablegen
+  favicon: images/favicon.png    # kleines Icon für Browser-Tab
   features:
-    - navigation.instant      # Seiten wechseln ohne Reload
-    - navigation.tabs         # Tabs für Hauptnavigation
-    - navigation.sections     # Sektionen klar strukturieren
-    - search.suggest          # bessere Suche
-    - search.highlight        # Treffer werden hervorgehoben
-    - content.code.copy       # Copy-Button für Codeblöcke
-    - content.tabs.link       # Tabs klickbar machen
-
+    - navigation.instant         # Seiten wechseln ohne Reload
+    - navigation.tabs            # Tabs für Hauptnavigation
+    - navigation.sections        # Sektionen klar strukturieren
+    - search.suggest             # bessere Suche
+    - search.highlight           # Treffer werden hervorgehoben
+    - content.code.copy          # Copy-Button für Codeblöcke
+    - content.tabs.link          # Tabs klickbar machen
   palette:
     - scheme: default
       primary: indigo
@@ -25,3 +26,19 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Hellmodus
+
+nav:
+  - Willkommen: index.md
+  - Schnellstart: getting-started.md
+  - Architektur: architecture.md
+  - API: api.md
+  - FAQ: faq.md
+  - Referenz: reference.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com   # ggf. Projekt-Team-LinkedIn
+  copyright: "© 2025 Gruppe 6 – HSLU"
