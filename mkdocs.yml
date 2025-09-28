@@ -3,16 +3,16 @@ site_name: scope-your-project-gruppe-6 – Doku
 theme:
   name: material
   language: de
-  logo: images/logo.png          # eigenes Logo in docs/images/ ablegen
-  favicon: images/favicon.png     # kleines Icon für Browser-Tab
+  logo: images/logo.png                  # optional: Datei in docs/images/logo.png
+  favicon: images/favicon.png            # optional: Datei in docs/images/favicon.png
   features:
-    - navigation.instant          # Seiten wechseln ohne Reload
-    - navigation.tabs             # Tabs für Hauptnavigation
-    - navigation.sections         # Sektionen klar strukturieren
-    - search.suggest              # bessere Suche
-    - search.highlight            # Treffer werden hervorgehoben
-    - content.code.copy           # Copy-Button für Codeblöcke
-    - content.tabs.link           # Tabs klickbar machen
+    - navigation.instant                 # Seitenwechsel ohne Reload
+    - navigation.tabs                    # Tabs in der Hauptnavigation
+    - navigation.sections                # Abschnittsweise Struktur
+    - search.suggest                     # Suchvorschläge
+    - search.highlight                   # Treffer hervorheben
+    - content.code.copy                  # Copy-Button für Codeblöcke
+    - content.tabs.link                  # Tabs klickbar machen
   palette:
     - scheme: default
       primary: indigo
@@ -27,7 +27,7 @@ theme:
         icon: material/weather-sunny
         name: Hellmodus
 
-# <<< NEU: Markdown-Erweiterungen für Callouts/Buttons/Tabs/Emojis >>>
+# --- Markdown-Erweiterungen (Buttons, Callouts, Emojis, Tabs, …) ---
 markdown_extensions:
   - admonition
   - attr_list
@@ -43,20 +43,23 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-# >>> Ende NEU
+# -------------------------------------------------------------------
 
+# Navigation – nur vorhandene Seiten verlinkt
 nav:
   - Willkommen: index.md
   - Schnellstart: getting-started.md
   - Architektur: architecture.md
   - API: api.md
   - FAQ: faq.md
-  - Referenz: reference.md
 
+# (Optional) Social-Links im Footer – gerne anpassen/entfernen
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com         # ggf. Projekt-Team-LinkedIn
-  copyright: "© 2025 Gruppe 6 – HSLU"
+      link: https://www.linkedin.com       # ggf. Team- oder Projektprofil verlinken
+
+# (Optional) Copyright im Footer – anpassen erlaubt
+copyright: "© 2025 Gruppe 6 – HSLU"
