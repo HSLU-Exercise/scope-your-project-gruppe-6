@@ -1,0 +1,42 @@
+site_name: scope-your-project-gruppe-6 – Doku
+site_description: Suchfähige, versionierte Dokumentation (MkDocs + Material)
+site_url: https://hslu-exercise.github.io/scope-your-project-gruppe-6/
+repo_url: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
+repo_name: HSLU-Exercise/scope-your-project-gruppe-6
+
+theme:
+  name: material
+  language: de
+  features:
+    - navigation.instant
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - search.share
+
+plugins:
+  - search:
+      lang: de
+
+nav:
+  - Start: index.md
+  - Leitfaden:
+      - Schnellstart: getting-started.md
+      - Architektur: architecture.md
+  - Referenz:
+      - API: api.md
+      - FAQ: faq.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
