@@ -4,15 +4,15 @@ theme:
   name: material
   language: de
   logo: images/logo.png          # eigenes Logo in docs/images/ ablegen
-  favicon: images/favicon.png    # kleines Icon für Browser-Tab
+  favicon: images/favicon.png     # kleines Icon für Browser-Tab
   features:
-    - navigation.instant         # Seiten wechseln ohne Reload
-    - navigation.tabs            # Tabs für Hauptnavigation
-    - navigation.sections        # Sektionen klar strukturieren
-    - search.suggest             # bessere Suche
-    - search.highlight           # Treffer werden hervorgehoben
-    - content.code.copy          # Copy-Button für Codeblöcke
-    - content.tabs.link          # Tabs klickbar machen
+    - navigation.instant          # Seiten wechseln ohne Reload
+    - navigation.tabs             # Tabs für Hauptnavigation
+    - navigation.sections         # Sektionen klar strukturieren
+    - search.suggest              # bessere Suche
+    - search.highlight            # Treffer werden hervorgehoben
+    - content.code.copy           # Copy-Button für Codeblöcke
+    - content.tabs.link           # Tabs klickbar machen
   palette:
     - scheme: default
       primary: indigo
@@ -27,6 +27,24 @@ theme:
         icon: material/weather-sunny
         name: Hellmodus
 
+# <<< NEU: Markdown-Erweiterungen für Callouts/Buttons/Tabs/Emojis >>>
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+# >>> Ende NEU
+
 nav:
   - Willkommen: index.md
   - Schnellstart: getting-started.md
@@ -40,5 +58,5 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com   # ggf. Projekt-Team-LinkedIn
+      link: https://www.linkedin.com         # ggf. Projekt-Team-LinkedIn
   copyright: "© 2025 Gruppe 6 – HSLU"
