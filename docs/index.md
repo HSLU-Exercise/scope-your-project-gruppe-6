@@ -1,12 +1,16 @@
+# Willkommen 👋
+
+Willkommen in der Projektdokumentation von **scope-your-project-gruppe-6**.  
+Hier findest du alles rund um Architektur, Setup und Referenzen.
+
 ---
-title: Start
-search:
-  boost: 2
+
+## 🚀 Schnellstart
+- [Loslegen](getting-started.md)
+- [FAQ](faq.md)
+- [Architektur](architecture.md)
+
 ---
 
-# Willkommen
-
-Dies ist die **Startseite** der Dokumentation. Nutze die Suche (oben rechts), um Inhalte schnell zu finden.
-
-!!! tip "Suche nutzen"
-    Tippe **Schlüsselwörter** (z. B. *Issue*, *Branch*, *Token*). Ergebnisse erscheinen live.
+## 📚 Weitere Infos
+Nutze die **Suche oben rechts**, um Inhalte schnell zu finden.
