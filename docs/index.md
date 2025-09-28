@@ -1,53 +1,41 @@
 # Willkommen 👋
 
 Willkommen in der Projektdokumentation von **scope-your-project-gruppe-6**.  
-Hier findest du alles rund um Architektur, Setup, API und Referenzen.
+Hier findest du alles rund um **Architektur, Setup, API** und **Referenzen**.
 
-!!! tip "🔎 Schnell finden"
-    Nutze die **Suche oben rechts** und tippe Schlüsselwörter (z. B. *Issue*, *Branch*, *Token*).  
+!!! tip "💡 Tipp *Schnell finden*"
+    Nutze die **Suche oben rechts** und tippe **Schlüsselwörter** (z. B. *Issue*, *Branch*, *Token*).  
     Treffer erscheinen live – **Enter** ist nicht nötig.
 
 ---
 
 ## 🚀 Schnellstart
 
-[Loslegen](getting-started.md){ .md-button .md-button--primary }
-[FAQ](faq.md){ .md-button }
+[Loslegen](getting-started.md){ .md-button .md-button--primary }  
+[FAQ](faq.md){ .md-button }  
 [Architektur](architecture.md){ .md-button }
 
 ---
 
-## 📦 Was du hier findest
+## 📚 Was du hier findest
 
-???+ abstract "Guides & Referenzen"
-    - **Setup & Onboarding:** [Loslegen](getting-started.md)  
-    - **Architekturübersicht:** [Architektur](architecture.md)  
-    - **API Endpunkte:** [API Referenz](api.md)  
-    - **Häufige Fragen:** [FAQ](faq.md)
+> **Guides & Referenzen** kompakt und suchbar:
 
----
-
-!!! example "🧭 Nächste Schritte"
-    1. **Repo klonen** & Umgebung einrichten  
-    2. **`.env`/Secrets** prüfen  
-    3. **Server starten** und ersten Request testen  
+- **Setup & Onboarding:** [Loslegen](getting-started.md)
+- **Architekturüberblick:** [Architektur](architecture.md)
+- **API Endpunkte:** [API](api.md)
+- **Häufige Fragen:** [FAQ](faq.md)
 
 ---
 
-## 🔗 Projektlinks
+## 🔧 Nützliche Tipps
 
-- 🐙 **GitHub**: <https://github.com/HSLU-Exercise/scope-your-project-gruppe-6>  
-- 🌐 **Doku (dieses Portal)**: `gh-pages` via GitHub Pages  
-- ⚙️ **Builds**: Actions → *Build and Deploy MkDocs*
-
----
-
-## 🧩 Style & Konventionen
-
-- Kurze, prägnante Sätze – **eine Seite = ein Thema**  
-- Code immer als Block mit Sprache, z. B.:
+- **Kürzer, prägnanter, besser** – eine Seite = ein Thema.
+- **Aussagekräftige Überschriften** (`##`) verbessern Treffer in der Suche.
+- Codeblöcke **immer mit Sprache** markieren – z. B.:
 
 ```bash
+# Server starten
 make start
-# oder
+# oder (Node.js)
 npm run start
