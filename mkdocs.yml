@@ -3,8 +3,8 @@ site_name: scope-your-project-gruppe-6 – Doku
 theme:
   name: material
   language: de
-  logo: images/logo.png                  # optional: Datei in docs/images/logo.png
-  favicon: images/favicon.png            # optional: Datei in docs/images/favicon.png
+  logo: logo.png                  # optional: Datei in docs/images/logo.png
+  favicon: logo.png            # optional: Datei in docs/images/favicon.png
   features:
     - navigation.instant                 # Seitenwechsel ohne Reload
     - navigation.tabs                    # Tabs in der Hauptnavigation
