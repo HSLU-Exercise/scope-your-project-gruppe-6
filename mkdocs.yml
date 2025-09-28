@@ -1,22 +1,27 @@
 site_name: scope-your-project-gruppe-6 – Doku
+
 theme:
   name: material
   language: de
   features:
-    - navigation.instant       # Seiten wechseln ohne Reload
-    - navigation.tabs          # Tabs für Hauptnavigation
-    - navigation.sections      # Sektionen klar strukturieren
-    - search.suggest           # bessere Suche
-    - search.highlight         # Treffer werden hervorgehoben
-    - content.code.copy        # Copy-Button für Codeblöcke
-    - content.tabs.link        # Tabs klickbar machen
+    - navigation.instant      # Seiten wechseln ohne Reload
+    - navigation.tabs         # Tabs für Hauptnavigation
+    - navigation.sections     # Sektionen klar strukturieren
+    - search.suggest          # bessere Suche
+    - search.highlight        # Treffer werden hervorgehoben
+    - content.code.copy       # Copy-Button für Codeblöcke
+    - content.tabs.link       # Tabs klickbar machen
+
   palette:
     - scheme: default
-      primary: indigo
-      accent: blue
-    - scheme: slate
       primary: indigo
       accent: blue
       toggle:
         icon: material/weather-night
         name: Dunkelmodus
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Hellmodus
