@@ -24,6 +24,13 @@ theme:
       primary: indigo
       accent: blue
 
+plugins:
+  - search
+  - autorefs
+  - minify
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+
 markdown_extensions:
   - admonition
   - attr_list
