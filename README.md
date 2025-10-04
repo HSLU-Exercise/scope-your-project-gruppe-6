@@ -23,7 +23,9 @@ Dieses Projekt dient der praktischen Anwendung von Softwarearchitektur, API-Desi
 - ⚙️ **Backend / API:** Serverlogik, Authentifizierung, Datenaustausch  
 - 🗄️ **Datenbank:** Speicherung von Nutzerdaten  
 - 🌐 **Externe Services:** Anbindung an externe APIs (z. B. Auth, Data)  
-- 📖 **Projekt-Dokumentation (Wiki):** 👉 [Zum Wiki »](https://hslu-exercise.github.io/scope-your-project-gruppe-6/)
+- 📚 **Projekt-Doku (Pages):** [Zur Doku →](https://hslu-exercise.github.io/scope-your-project-gruppe-6/)
+- 📖 **GitHub-Wiki:** [Zum Wiki →](https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki)
+
 
 ---
 
