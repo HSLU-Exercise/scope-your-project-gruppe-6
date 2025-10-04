@@ -1,35 +1,31 @@
-# mkdocs.yml
+mkdocs>=1.5
+mkdocs-material>=9.5
+mkdocs-autorefs>=1.2
+
+
+# FILE: mkdocs.yml
 site_name: scope-your-project-gruppe-6 – Doku
 theme:
   name: material
   language: de
-  logo: docs/images/logo.png
-  favicon: docs/images/favicon.png
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.tabs
     - navigation.sections
-    - navigation.expand
-    - toc.integrate
+    - navigation.top
+    - content.code.copy
     - search.suggest
     - search.highlight
-    - content.code.copy
-    - content.tabs.link
   palette:
     - scheme: slate
-      primary: blue
-      accent: lime
-    - scheme: default
       primary: indigo
       accent: blue
 
 plugins:
   - search
   - autorefs
-  - minify
-  - git-revision-date-localized:
-      fallback_to_build_date: true
 
 markdown_extensions:
   - admonition
@@ -37,18 +33,10 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
-  - toc:
-      permalink: true
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
   - pymdownx.emoji:
+      # mkdocs-material >= 9.4: neue Pfade statt "materialx.emoji.*"
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
@@ -59,10 +47,42 @@ nav:
   - API: api.md
   - FAQ: faq.md
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com
-  copyright: © 2025 Gruppe 6 · HSLU
+
+# FILE: .github/workflows/docs.yml
+name: Build and Deploy MkDocs
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build site
+        run: mkdocs build --strict --site-dir site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
