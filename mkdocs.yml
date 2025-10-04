@@ -1,33 +1,43 @@
 site_name: scope-your-project-gruppe-6 – Doku
-
 theme:
   name: material
   language: de
-  logo: logo.png                  # optional: Datei in docs/images/logo.png
-  favicon: logo.png            # optional: Datei in docs/images/favicon.png
+  logo: docs/images/logo.png
+  favicon: docs/images/favicon.png
+
   features:
-    - navigation.instant                 # Seitenwechsel ohne Reload
-    - navigation.tabs                    # Tabs in der Hauptnavigation
-    - navigation.sections                # Abschnittsweise Struktur
-    - search.suggest                     # Suchvorschläge
-    - search.highlight                   # Treffer hervorheben
-    - content.code.copy                  # Copy-Button für Codeblöcke
-    - content.tabs.link                  # Tabs klickbar machen
+    - navigation.instant            # Seitenwechsel ohne Reload
+    - navigation.tracking           # Tabs in der Adresszeile
+    - navigation.sections           # Abschnittsweise Struktur
+    - search.suggest                # Suchvorschläge
+    - search.highlight              # Suchergebnisse hervorheben
+    - content.code.copy             # Copy-Button für Codeblöcke
+    - content.tabs.link             # Tabs klickbar machen
+    - toc.follow                    # Table of Contents bleibt sichtbar
+    - content.action.edit           # "Edit this page" Button
+    - content.action.view           # "View source" Button
+    - navigation.expand             # Automatisch expandierte Navigation
+    - navigation.footer             # Footer Navigation unten anzeigen
+
   palette:
-    - scheme: default
-      primary: indigo
-      accent: blue
-      toggle:
-        icon: material/weather-night
-        name: Dunkelmodus
+    # Dunkles Theme
     - scheme: slate
       primary: indigo
       accent: blue
       toggle:
+        icon: material/weather-night
+        name: Darkmode aktivieren 🌙
+    # Helles Theme
+    - scheme: default
+      primary: indigo
+      accent: light-blue
+      toggle:
         icon: material/weather-sunny
-        name: Hellmodus
+        name: Lightmode aktivieren ☀️
 
-# --- Markdown-Erweiterungen (Buttons, Callouts, Emojis, Tabs, …) ---
+  icon:
+    repo: fontawesome/brands/github
+
 markdown_extensions:
   - admonition
   - attr_list
@@ -38,28 +48,43 @@ markdown_extensions:
       permalink: true
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-# -------------------------------------------------------------------
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.keys
 
-# Navigation – nur vorhandene Seiten verlinkt
+# Navigation (Seitenstruktur)
 nav:
   - Willkommen: index.md
-  - Schnellstart: getting-started.md
+  - Schnellstart: getting_started.md
   - Architektur: architecture.md
   - API: api.md
   - FAQ: faq.md
 
-# (Optional) Social-Links im Footer – gerne anpassen/entfernen
+# Repository- und Footer-Konfiguration
+repo_name: scope-your-project-gruppe-6
+repo_url: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
+edit_uri: edit/main/docs/
+
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com       # ggf. Team- oder Projektprofil verlinken
+      link: https://www.linkedin.com
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg
+  generator: false
+  copyright: "© 2025 Gruppe 6 — HSLU"
 
-# (Optional) Copyright im Footer – anpassen erlaubt
-copyright: "© 2025 Gruppe 6 – HSLU"
+plugins:
+  - search
+  - tags
+  - autorefs
