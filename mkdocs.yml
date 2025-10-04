@@ -1,40 +1,28 @@
+# mkdocs.yml
 site_name: scope-your-project-gruppe-6 – Doku
 theme:
   name: material
   language: de
   logo: docs/images/logo.png
   favicon: docs/images/favicon.png
-
   features:
     - navigation.instant
     - navigation.tracking
+    - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - toc.integrate
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.tabs.link
-    - toc.follow
-    - navigation.footer
-    - content.action.edit
-    - content.action.view
-
   palette:
     - scheme: slate
-      primary: indigo
-      accent: blue
-      toggle:
-        icon: material/weather-night
-        name: Darkmode aktivieren 🌙
+      primary: blue
+      accent: lime
     - scheme: default
       primary: indigo
-      accent: light-blue
-      toggle:
-        icon: material/weather-sunny
-        name: Lightmode aktivieren ☀️
-
-  icon:
-    repo: fontawesome/brands/github
+      accent: blue
 
 markdown_extensions:
   - admonition
@@ -46,14 +34,13 @@ markdown_extensions:
       permalink: true
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.highlight:
-      anchor_linenums: true
-      auto_title: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  - pymdownx.keys
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -65,22 +52,10 @@ nav:
   - API: api.md
   - FAQ: faq.md
 
-repo_name: scope-your-project-gruppe-6
-repo_url: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
-edit_uri: edit/main/docs/
-
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg
-  generator: false
-  copyright: "© 2025 Gruppe 6 — HSLU"
-
-plugins:
-  - search
-  - tags
-  - autorefs
+  copyright: © 2025 Gruppe 6 · HSLU
