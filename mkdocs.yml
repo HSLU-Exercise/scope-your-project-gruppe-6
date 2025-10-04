@@ -6,28 +6,26 @@ theme:
   favicon: docs/images/favicon.png
 
   features:
-    - navigation.instant            # Seitenwechsel ohne Reload
-    - navigation.tracking           # Tabs in der Adresszeile
-    - navigation.sections           # Abschnittsweise Struktur
-    - search.suggest                # Suchvorschläge
-    - search.highlight              # Suchergebnisse hervorheben
-    - content.code.copy             # Copy-Button für Codeblöcke
-    - content.tabs.link             # Tabs klickbar machen
-    - toc.follow                    # Table of Contents bleibt sichtbar
-    - content.action.edit           # "Edit this page" Button
-    - content.action.view           # "View source" Button
-    - navigation.expand             # Automatisch expandierte Navigation
-    - navigation.footer             # Footer Navigation unten anzeigen
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+    - navigation.footer
+    - content.action.edit
+    - content.action.view
 
   palette:
-    # Dunkles Theme
     - scheme: slate
       primary: indigo
       accent: blue
       toggle:
         icon: material/weather-night
         name: Darkmode aktivieren 🌙
-    # Helles Theme
     - scheme: default
       primary: indigo
       accent: light-blue
@@ -51,16 +49,15 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
       auto_title: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-# Navigation (Seitenstruktur)
 nav:
   - Willkommen: index.md
   - Schnellstart: getting_started.md
@@ -68,7 +65,6 @@ nav:
   - API: api.md
   - FAQ: faq.md
 
-# Repository- und Footer-Konfiguration
 repo_name: scope-your-project-gruppe-6
 repo_url: https://github.com/HSLU-Exercise/scope-your-project-gruppe-6
 edit_uri: edit/main/docs/
