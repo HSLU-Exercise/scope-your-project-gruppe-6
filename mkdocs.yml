@@ -1,19 +1,20 @@
 site_name: scope-your-project-gruppe-6 – Doku
+
 theme:
   name: material
   language: de
   icon:
     repo: fontawesome/brands/github
-features:
-  - navigation.instant
-  - navigation.tracking
-  - navigation.sections
-  - navigation.expand
-  - content.code.copy
-palette:
-  scheme: slate
-  primary: indigo
-  accent: blue
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+  palette:
+    - scheme: slate
+      primary: indigo
+      accent: blue
 
 plugins:
   - search
@@ -27,14 +28,13 @@ markdown_extensions:
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
-  # ✅ neue (nicht-deprecated) Emoji-Konfig für Material ≥ 9.4
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - Willkommen: docs/index.md
-  - Schnellstart: docs/getting-started.md
-  - Architektur: docs/architecture.md
-  - API: docs/api.md
-  - FAQ: docs/faq.md
+  - Willkommen: index.md
+  - Schnellstart: getting-started.md
+  - Architektur: architecture.md
+  - API: api.md
+  - FAQ: faq.md
