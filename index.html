@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Scope Your Project – Gruppe 6 (HSLU). Projekt-Overview, Doku-Links, Team & Tech-Stack. Atemberaubende Landingpage für GitHub Pages." />
+  <meta property="og:title" content="Scope Your Project – Gruppe 6" />
+  <meta property="og:description" content="Praxisprojekt zu Softwarearchitektur, API-Design & Deployment – HSLU" />
+  <meta property="og:type" content="website" />
+  <title>🚀 Scope Your Project – Gruppe 6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg:#070a17; --bg2:#0a1128; --panel:rgba(255,255,255,.06); --panel-2:rgba(255,255,255,.12);
+      --text:#e8eef7; --muted:#a9b4c7; --brand:#7c9cfb; --teal:#5eead4; --violet:#a78bfa; --pink:#f472b6;
+      --radius:20px; --shadow:0 18px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--text);
+      background: radial-gradient(60% 40% at 0% -10%, rgba(124,156,251,.20), transparent),
+                  radial-gradient(50% 40% at 100% 10%, rgba(94,234,212,.18), transparent),
+                  linear-gradient(180deg,var(--bg),var(--bg2));
+      overflow-x:hidden}
+    a{color:var(--teal);text-decoration:none} a:hover{text-decoration:underline}
+    .wrapper{width:min(1150px,92vw);margin:0 auto}
+
+    /* Floating navbar */
+    .nav{position:sticky;top:16px;z-index:50;display:flex;justify-content:center}
+    .nav-inner{display:flex;gap:.6rem;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);border:1px solid var(--panel-2);border-radius:999px;padding:.5rem .7rem; box-shadow:var(--shadow)}
+    .nav-inner a{padding:.45rem .8rem;border-radius:999px;color:var(--muted);font-weight:600}
+    .nav-inner a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+
+    /* Stars background */
+    #stars{position:fixed;inset:0;z-index:-2}
+
+    header.hero{position:relative;padding:110px 0 84px;isolation:isolate}
+    .hero-shell{position:relative}
+    .hero-card{position:relative;border-radius:calc(var(--radius) + 8px);padding:40px;box-shadow:var(--shadow);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--panel-2)}
+    /* animated border */
+    .hero-card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from 180deg, var(--brand), var(--violet), var(--teal), var(--pink), var(--brand));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;}
+
+    h1.title{font-size:clamp(2.2rem,4.6vw,3.7rem);margin:0 0 8px;letter-spacing:.2px}
+    .subtitle{color:var(--muted);font-size:clamp(1rem,2.2vw,1.18rem)}
+
+    .badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:14px}
+    .badge{display:inline-flex;align-items:center;gap:.42rem;padding:.38rem .6rem;border-radius:999px;background:var(--panel);border:1px solid var(--panel-2);font-weight:700;font-size:.8rem;color:var(--muted)}
+
+    .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.2px;padding:.9rem 1.05rem;border-radius:14px;border:1px solid transparent;cursor:pointer;transition:transform .18s ease, filter .18s ease}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--violet));color:#070a17}
+    .btn.ghost{background:transparent;border-color:var(--panel-2);color:var(--text)}
+    .btn:hover{transform:translateY(-1px);filter:saturate(1.15)}
+
+    section{padding:56px 0}
+    section h2{font-size:clamp(1.5rem,2.7vw,1.9rem);margin:0 0 18px;position:relative}
+    section h2 .under{position:absolute;left:0;bottom:-6px;height:2px;width:120px;background:linear-gradient(90deg,var(--brand),transparent)}
+    .muted{color:var(--muted)}
+
+    .grid{display:grid;gap:18px}
+    @media(min-width:880px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--panel-2);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;transform-style:preserve-3d;transition:transform .25s ease}
+    .card:hover{transform:translateY(-2px) perspective(800px) rotateX(1.5deg) rotateY(-1.5deg)}
+    .card h3{margin:0 0 6px;font-size:1.1rem}
+    .card p{margin:0;color:var(--muted)}
+
+    pre code{display:block;padding:16px;border-radius:14px;font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;background:#0a0f1a;border:1px solid var(--panel-2);color:#e8f0ff;font-size:.92rem;line-height:1.5}
+    .codeblock{position:relative}
+    .copy{position:absolute;top:10px;right:10px;border:1px solid var(--panel-2);background:rgba(255,255,255,.04);color:var(--text);padding:.4rem .6rem;border-radius:10px;cursor:pointer;font-weight:700;font-size:.78rem}
+    .copy.ok{border-color:rgba(34,197,94,.5);color:#b6f7c8}
+
+    .team{display:grid;gap:14px}
+    @media(min-width:720px){.team{grid-template-columns:repeat(5,1fr)}}
+    .member{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--panel-2);background:var(--panel);border-radius:14px}
+    .avatar{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:800;color:#070a17;background:linear-gradient(135deg,var(--brand),var(--teal))}
+    .role{color:var(--muted);font-size:.92rem}
+
+    .timeline{position:relative;margin-top:8px}
+    .timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--brand),transparent)}
+    .milestone{position:relative;margin-left:28px;margin-bottom:14px;padding-left:16px}
+    .milestone::before{content:"";position:absolute;left:-24px;top:4px;width:10px;height:10px;border-radius:999px;background:var(--teal);box-shadow:0 0 0 3px rgba(94,234,212,.18)}
+
+    footer{padding:36px 0 60px;color:var(--muted);font-size:.95rem}
+    html{scroll-behavior:smooth}
+    .reveal{opacity:0;transform:translateY(16px);transition:all .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="nav">
+    <div class="nav-inner">
+      <a href="#overview">Übersicht</a>
+      <a href="#setup">Setup</a>
+      <a href="#arch">Architektur</a>
+      <a href="#team">Team</a>
+      <a href="#tech">Technologien</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrapper hero-shell">
+      <div class="badges">
+        <img alt="docs" class="badge" src="https://img.shields.io/badge/docs-online-5eead4?style=flat&logo=readthedocs&logoColor=0b1020"/>
+        <img alt="build" class="badge" src="https://img.shields.io/badge/build-passing-22c55e?style=flat&logo=githubactions"/>
+        <img alt="license" class="badge" src="https://img.shields.io/badge/license-MIT-a78bfa?style=flat"/>
+        <span class="badge"><i class="fa-solid fa-school"></i> HSLU</span>
+      </div>
+      <div class="hero-card">
+        <h1 class="title">🚀 Scope Your Project – Gruppe 6</h1>
+        <p class="subtitle">Softwarearchitektur, API‑Design & Deployment – messerscharf dokumentiert, CI/CD‑getrieben und visuell so smooth, dass selbst dein Dozent Gänsehaut bekommt.</p>
+        <div class="cta">
+          <a class="btn primary" href="docs/" target="_self"><i class="fa-solid fa-book-open"></i> Zur Doku</a>
+          <a class="btn ghost" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki" target="_blank" rel="noopener"><i class="fa-solid fa-wand-magic-sparkles"></i> Zum Wiki</a>
+          <a class="btn ghost" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrapper" style="margin-top:-36px;margin-bottom:12px">
+    <div class="card" style="display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:center;padding:12px 16px">
+      <a class="badge" href="#overview"><i class="fa-solid fa-layer-group"></i> Übersicht</a>
+      <a class="badge" href="#setup"><i class="fa-solid fa-bolt"></i> Setup</a>
+      <a class="badge" href="#arch"><i class="fa-solid fa-sitemap"></i> Architektur</a>
+      <a class="badge" href="#docs"><i class="fa-solid fa-book"></i> Docs Navigator</a>
+      <a class="badge" href="#team"><i class="fa-solid fa-users"></i> Team</a>
+      <a class="badge" href="#tech"><i class="fa-solid fa-microchip"></i> Technologien</a>
+    </div>
+  </nav>
+
+  <main class="wrapper">
+    <section id="docs" class="reveal">
+      <h2>📚 Docs Navigator <span class="under"></span></h2>
+      <p class="muted">Direkt zu den wichtigsten Wiki‑Seiten:</p>
+      <div class="grid cols-3" style="margin-top:14px">
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Getting-Started" target="_blank" rel="noopener"><h3>🚀 Getting Started</h3><p>Onboarding, Voraussetzungen & Klonen</p></a>
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Architecture" target="_blank" rel="noopener"><h3>🏗️ Architecture</h3><p>Systemarchitektur, ENV & Diagramme</p></a>
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/API-Reference" target="_blank" rel="noopener"><h3>🧩 API Reference</h3><p>Endpoints, Beispiele, Statuscodes</p></a>
+      </div>
+      <div class="grid cols-3" style="margin-top:14px">
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Troubleshooting" target="_blank" rel="noopener"><h3>🛠️ Troubleshooting</h3><p>Häufige Fehler & Lösungen</p></a>
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Glossary" target="_blank" rel="noopener"><h3>📖 Glossary</h3><p>Begriffe & Abkürzungen</p></a>
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Contributing" target="_blank" rel="noopener"><h3>🤝 Contributing</h3><p>Branch‑Strategie, PRs & Reviews</p></a>
+      </div>
+    </section>
+    <section id="overview">
+      <h2>Übersicht <span class="under"></span></h2>
+      <p class="muted">Unsere Hauptkomponenten – klar getrennt, lose gekoppelt und sauber deploybar.</p>
+      <div class="grid cols-3" style="margin-top:14px">
+        <div class="card"><h3><i class="fa-solid fa-display"></i> Frontend / UI</h3><p>Barrierearm, schnell, modern. State‑Management & Routing, bereit für Production.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-diagram-project"></i> Backend / API</h3><p>REST‑Schnittstellen, Auth, Observability. Versioniert & testgetrieben.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-database"></i> Datenbank</h3><p>Migrationen, Backups & Reproduzierbarkeit. Konsistenz garantiert.</p></div>
+      </div>
+      <div class="grid cols-3" style="margin-top:14px">
+        <div class="card"><h3><i class="fa-solid fa-cloud"></i> Externe Services</h3><p>Auth‑Provider, Data‑APIs & Webhooks – robust mit Timeouts & Retries.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-gears"></i> CI / CD</h3><p>GitHub Actions: Lint → Test → Build → Deploy – bei jedem Commit.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-shield-halved"></i> Qualität</h3><p>Tests, Code‑Review, Security‑Scans & Dependabot.</p></div>
+      </div>
+    </section>
+
+    <section id="setup">
+      <h2>🚀 Schnellstart <span class="under"></span></h2>
+      <div class="card codeblock"><button class="copy" aria-label="Copy">copy</button>
+        <pre><code>git clone https://github.com/HSLU-Exercise/scope-your-project-gruppe-6.git
+cd scope-your-project-gruppe-6
+
+# Installation (je nach Projekttechnologie)
+make setup                       # oder
+pip install -r requirements.txt  # Python
+npm install                      # Node.js
+
+# Server starten
+make start                       # oder
+npm run start</code></pre>
+      </div>
+      <div class="timeline">
+        <div class="milestone"><strong>Commit</strong> → Lint & Tests laufen automatisch</div>
+        <div class="milestone"><strong>Build</strong> → Artefakte werden versioniert</div>
+        <div class="milestone"><strong>Deploy</strong> → GitHub Pages / Cloud</div>
+      </div>
+    </section>
+
+    <section id="arch">
+      <h2>Systemarchitektur <span class="under"></span></h2>
+      <div class="card">
+        <!-- Minimalistische Inline-Architektur-Grafik -->
+        <svg viewBox="0 0 900 210" width="100%" height="210" aria-label="Architekturdiagramm">
+          <defs>
+            <linearGradient id="gradA" x1="0" x2="1">
+              <stop offset="0%" stop-color="#7c9cfb"/><stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+            <linearGradient id="gradB" x1="0" x2="1">
+              <stop offset="0%" stop-color="#5eead4"/><stop offset="100%" stop-color="#7c9cfb"/>
+            </linearGradient>
+          </defs>
+          <rect x="40" y="50" rx="14" ry="14" width="200" height="70" fill="url(#gradA)" opacity=".9"/>
+          <text x="140" y="92" text-anchor="middle" font-family="Inter" font-weight="800" fill="#070a17">Frontend / UI</text>
+
+          <rect x="330" y="50" rx="14" ry="14" width="200" height="70" fill="url(#gradB)" opacity=".9"/>
+          <text x="430" y="92" text-anchor="middle" font-family="Inter" font-weight="800" fill="#070a17">API / Backend</text>
+
+          <rect x="620" y="40" rx="16" ry="16" width="220" height="90" fill="#f59e0b" opacity=".8"/>
+          <text x="730" y="92" text-anchor="middle" font-family="Inter" font-weight="800" fill="#070a17">Datenbank</text>
+
+          <rect x="620" y="140" rx="14" ry="14" width="220" height="50" fill="#ef4444" opacity=".8"/>
+          <text x="730" y="172" text-anchor="middle" font-family="Inter" font-weight="800" fill="#070a17">Externe Services</text>
+
+          <!-- Pfeile -->
+          <g stroke="#e8eef7" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M240,85 C280,85 290,85 330,85" />
+            <path d="M530,85 C570,85 580,85 620,85" />
+            <path d="M530,85 C600,120 600,150 620,165" />
+          </g>
+          <g fill="#e8eef7">
+            <polygon points="330,85 322,80 322,90"/>
+            <polygon points="620,85 612,80 612,90"/>
+            <polygon points="620,165 612,160 612,170"/>
+          </g>
+        </svg>
+        <p class="muted" style="margin-top:8px">Trennung der Verantwortlichkeiten, klare Datenflüsse, Deployment‑freundlich.</p>
+      </div>
+    </section>
+
+    <section id="team">
+      <h2>👥 Team <span class="under"></span></h2>
+      <div class="team">
+        <div class="member"><div class="avatar">NB</div><div><div><strong>Nando Manuel Brauchli</strong></div><div class="role">Projektleitung, Dokumentation & Architektur</div></div></div>
+        <div class="member"><div class="avatar">JF</div><div><div><strong>Jan Fischer</strong></div><div class="role">Backend‑Entwicklung, API‑Design</div></div></div>
+        <div class="member"><div class="avatar">JL</div><div><div><strong>Joshua Lipp</strong></div><div class="role">Frontend‑Implementierung, UI/UX</div></div></div>
+        <div class="member"><div class="avatar">FR</div><div><div><strong>Florian Röthlin</strong></div><div class="role">DevOps, CI/CD & Datenbankverwaltung</div></div></div>
+        <div class="member"><div class="avatar">IT</div><div><div><strong>Izmir Trpeza</strong></div><div class="role">Testing, Code‑Qualität & Integrationsprozesse</div></div></div>
+      </div>
+    </section>
+
+    <section id="tech">
+      <h2>🧠 Technologien <span class="under"></span></h2>
+      <div class="grid cols-3">
+        <div class="card"><h3><i class="fa-brands fa-python"></i> Python / Node.js</h3><p>Backend‑Implementierung</p></div>
+        <div class="card"><h3><i class="fa-solid fa-database"></i> PostgreSQL</h3><p>Datenbank</p></div>
+        <div class="card"><h3><i class="fa-solid fa-robot"></i> GitHub Actions</h3><p>CI/CD Pipelines</p></div>
+        <div class="card"><h3><i class="fa-solid fa-book"></i> MKDocs</h3><p>Dokumentation</p></div>
+        <div class="card"><h3><i class="fa-solid fa-file-lines"></i> Markdown</h3><p>Projekt‑Wiki</p></div>
+        <div class="card"><h3><i class="fa-solid fa-gem"></i> Clean Architecture</h3><p>Testbarkeit, Wartbarkeit, Skalierbarkeit</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrapper" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div>© 2025 HSLU — Scope Your Project (Gruppe 6). Lern‑ & Demo‑Zwecke.</div>
+    <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+      <img alt="pages" class="badge" src="https://img.shields.io/badge/Pages-deployed-7c9cfb?logo=github"/>
+      <img alt="issues" class="badge" src="https://img.shields.io/badge/Issues-0--open-22c55e"/>
+    </div>
+  </footer>
+
+  <!-- Back-to-top Button (in DOM schon vorhanden; Script erstellt ihn notfalls dynamisch) -->
+  <button id="toTop" aria-label="Nach oben" title="Nach oben" style="position:fixed;right:16px;bottom:16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#e8eef7;padding:.7rem .85rem;backdrop-filter:blur(8px);cursor:pointer;display:none"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script>
+    // Alles erst nach DOM-Aufbau initialisieren – verhindert Null-Access Fehler
+    document.addEventListener('DOMContentLoaded', () => {
+      // Copy buttons
+      document.querySelectorAll('.codeblock').forEach(block=>{
+        const btn=block.querySelector('.copy');
+        const code=block.querySelector('pre code');
+        if(btn && code){
+          btn.addEventListener('click',async()=>{
+            try{await navigator.clipboard.writeText(code.innerText);btn.textContent='kopiert';btn.classList.add('ok');setTimeout(()=>{btn.textContent='copy';btn.classList.remove('ok')},1400)}catch(e){btn.textContent='oops'}
+          })
+        }
+      })
+
+      // Hover tilt parallax on cards
+      document.querySelectorAll('.card').forEach(card=>{
+        card.addEventListener('mousemove',e=>{
+          const r=card.getBoundingClientRect();
+          const x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+          const rx=(.5-y)*6, ry=(x-.5)*6;
+          card.style.transform=`translateY(-2px) perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+        });
+        card.addEventListener('mouseleave',()=>{card.style.transform=''});
+      });
+
+      // Stars canvas background (defensiv)
+      const cvs=document.getElementById('stars');
+      if(cvs){
+        const ctx=cvs.getContext('2d'); let w,h,stars=[]; const R=()=>Math.random();
+        function resize(){w=window.innerWidth;h=window.innerHeight;cvs.width=w;cvs.height=h;stars=new Array(180).fill(0).map(()=>({x:R()*w,y:R()*h,s:R()*1.4+0.2,v:R()*0.15+0.02}))}
+        function anim(){ctx.clearRect(0,0,w,h);ctx.fillStyle='rgba(255,255,255,.9)';
+          for(const st of stars){ctx.globalAlpha=st.s;ctx.fillRect(st.x,st.y,1.2,1.2);st.x+=st.v; if(st.x>w) st.x=0}
+          requestAnimationFrame(anim)}
+        resize(); window.addEventListener('resize',resize); anim();
+      }
+
+      // Scroll reveal (mit Fallback)
+      if('IntersectionObserver' in window){
+        const observer=new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target);}})
+        },{threshold:.1});
+        document.querySelectorAll('.reveal, section').forEach(el=>observer.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'))
+      }
+
+      // Back to top button – robust: erzeugen, falls nicht vorhanden
+      let toTop=document.getElementById('toTop');
+      if(!toTop){
+        toTop=document.createElement('button');
+        toTop.id='toTop'; toTop.setAttribute('aria-label','Nach oben'); toTop.title='Nach oben';
+        toTop.innerHTML='<i class="fa-solid fa-arrow-up"></i>';
+        Object.assign(toTop.style,{position:'fixed',right:'16px',bottom:'16px',borderRadius:'999px',border:'1px solid rgba(255,255,255,.18)',background:'rgba(255,255,255,.07)',color:'#e8eef7',padding:'.7rem .85rem',backdropFilter:'blur(8px)',cursor:'pointer',display:'none'});
+        document.body.appendChild(toTop);
+      }
+      // Sichtbarkeit und Scroll-Verhalten nur setzen, wenn vorhanden
+      if(toTop){
+        window.addEventListener('scroll',()=>{ toTop.style.display = window.scrollY>600 ? 'block' : 'none'; });
+        toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+      }
+
+      // \"Selbsttests\" (leichte Runtime-Checks)
+      console.assert(!!document.getElementById('toTop'), '#toTop Button existiert');
+      console.assert(!!document.querySelector('section#docs'), '#docs Section existiert');
+      console.assert(!!document.getElementById('stars'), '#stars Canvas existiert');
+    });
+  </script>
+</body>
+</html>
