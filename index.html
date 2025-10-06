@@ -1,468 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Scope Your Project – Gruppe 6 (HSLU). Projekt-Overview, Doku-Links, Team & Tech-Stack. Atemberaubende Landingpage für GitHub Pages." />
+  <meta property="og:title" content="Scope Your Project – Gruppe 6" />
+  <meta property="og:description" content="Praxisprojekt zu Softwarearchitektur, API-Design & Deployment – HSLU" />
+  <meta property="og:type" content="website" />
+  <title>🚀 Scope Your Project – Gruppe 6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      --bg:#070a17; --bg2:#0a1128; --panel:rgba(255,255,255,.06); --panel-2:rgba(255,255,255,.12);
+      --text:#e8eef7; --muted:#a9b4c7; --brand:#7c9cfb; --teal:#5eead4; --violet:#a78bfa; --pink:#f472b6;
+      --radius:20px; --shadow:0 18px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; color:var(--text);
+      background: radial-gradient(60% 40% at 0% -10%, rgba(124,156,251,.20), transparent),
+                  radial-gradient(50% 40% at 100% 10%, rgba(94,234,212,.18), transparent),
+                  linear-gradient(180deg,var(--bg),var(--bg2));
+      overflow-x:hidden}
+    a{color:var(--teal);text-decoration:none} a:hover{text-decoration:underline}
+    .wrapper{width:min(1150px,92vw);margin:0 auto}
 
-<!doctype html>
-<html lang="de" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      
-        <link rel="next" href="getting-started/">
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
-    
-    
-      
-        <title>scope-your-project-gruppe-6 – Doku</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.2a3383ac.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
-      
-      
+    /* Floating navbar */
+    .nav{position:sticky;top:16px;z-index:50;display:flex;justify-content:center}
+    .nav-inner{display:flex;gap:.6rem;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);border:1px solid var(--panel-2);border-radius:999px;padding:.5rem .7rem; box-shadow:var(--shadow)}
+    .nav-inner a{padding:.45rem .8rem;border-radius:999px;color:var(--muted);font-weight:600}
+    .nav-inner a:hover{background:rgba(255,255,255,.06);color:var(--text)}
 
+    /* Stars background */
+    #stars{position:fixed;inset:0;z-index:-2}
 
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
+    header.hero{position:relative;padding:110px 0 84px;isolation:isolate}
+    .hero-shell{position:relative}
+    .hero-card{position:relative;border-radius:calc(var(--radius) + 8px);padding:40px;box-shadow:var(--shadow);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--panel-2)}
+    /* animated border */
+    .hero-card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from 180deg, var(--brand), var(--violet), var(--teal), var(--pink), var(--brand));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;}
 
-    
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#willkommen" class="md-skip">
-          Zum Inhalt
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
+    h1.title{font-size:clamp(2.2rem,4.6vw,3.7rem);margin:0 0 8px;letter-spacing:.2px}
+    .subtitle{color:var(--muted);font-size:clamp(1rem,2.2vw,1.18rem)}
 
-  
+    .badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:14px}
+    .badge{display:inline-flex;align-items:center;gap:.42rem;padding:.38rem .6rem;border-radius:999px;background:var(--panel);border:1px solid var(--panel-2);font-weight:700;font-size:.8rem;color:var(--muted)}
 
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
-    <a href="." title="scope-your-project-gruppe-6 – Doku" class="md-header__button md-logo" aria-label="scope-your-project-gruppe-6 – Doku" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+    .cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.2px;padding:.9rem 1.05rem;border-radius:14px;border:1px solid transparent;cursor:pointer;transition:transform .18s ease, filter .18s ease}
+    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--violet));color:#070a17}
+    .btn.ghost{background:transparent;border-color:var(--panel-2);color:var(--text)}
+    .btn:hover{transform:translateY(-1px);filter:saturate(1.15)}
 
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            scope-your-project-gruppe-6 – Doku
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Willkommen
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Suche">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Suche wird initialisiert
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
+    section{padding:56px 0}
+    section h2{font-size:clamp(1.5rem,2.7vw,1.9rem);margin:0 0 18px;position:relative}
+    section h2 .under{position:absolute;left:0;bottom:-6px;height:2px;width:120px;background:linear-gradient(90deg,var(--brand),transparent)}
+    .muted{color:var(--muted)}
+
+    .grid{display:grid;gap:18px}
+    @media(min-width:880px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid var(--panel-2);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;transform-style:preserve-3d;transition:transform .25s ease}
+    .card:hover{transform:translateY(-2px) perspective(800px) rotateX(1.5deg) rotateY(-1.5deg)}
+    .card h3{margin:0 0 6px;font-size:1.1rem}
+    .card p{margin:0;color:var(--muted)}
+
+    pre code{display:block;padding:16px;border-radius:14px;font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;background:#0a0f1a;border:1px solid var(--panel-2);color:#e8f0ff;font-size:.92rem;line-height:1.5}
+    .codeblock{position:relative}
+    .copy{position:absolute;top:10px;right:10px;border:1px solid var(--panel-2);background:rgba(255,255,255,.04);color:var(--text);padding:.4rem .6rem;border-radius:10px;cursor:pointer;font-weight:700;font-size:.78rem}
+    .copy.ok{border-color:rgba(34,197,94,.5);color:#b6f7c8}
+
+    .team{display:grid;gap:14px}
+    @media(min-width:720px){.team{grid-template-columns:repeat(5,1fr)}}
+    .member{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--panel-2);background:var(--panel);border-radius:14px}
+    .avatar{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-weight:800;color:#070a17;background:linear-gradient(135deg,var(--brand),var(--teal))}
+    .role{color:var(--muted);font-size:.92rem}
+
+    .timeline{position:relative;margin-top:8px}
+    .timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--brand),transparent)}
+    .milestone{position:relative;margin-left:28px;margin-bottom:14px;padding-left:16px}
+    .milestone::before{content:"";position:absolute;left:-24px;top:4px;width:10px;height:10px;border-radius:999px;background:var(--teal);box-shadow:0 0 0 3px rgba(94,234,212,.18)}
+
+    footer{padding:36px 0 60px;color:var(--muted);font-size:.95rem}
+    html{scroll-behavior:smooth}
+    .reveal{opacity:0;transform:translateY(16px);transition:all .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+
+  <div class="nav">
+    <div class="nav-inner">
+      <a href="#overview">Übersicht</a>
+      <a href="#setup">Setup</a>
+      <a href="#arch">Architektur</a>
+      <a href="#team">Team</a>
+      <a href="#tech">Technologien</a>
     </div>
   </div>
-</div>
-      
-    
-    
+
+  <header class="hero">
+    <div class="wrapper hero-shell">
+      <div class="badges">
+        <img alt="docs" class="badge" src="https://img.shields.io/badge/docs-online-5eead4?style=flat&logo=readthedocs&logoColor=0b1020"/>
+        <img alt="build" class="badge" src="https://img.shields.io/badge/build-passing-22c55e?style=flat&logo=githubactions"/>
+        <img alt="license" class="badge" src="https://img.shields.io/badge/license-MIT-a78bfa?style=flat"/>
+        <span class="badge"><i class="fa-solid fa-school"></i> HSLU</span>
+      </div>
+      <div class="hero-card">
+        <h1 class="title">🚀 Scope Your Project – Gruppe 6</h1>
+        <p class="subtitle">Softwarearchitektur, API‑Design & Deployment – messerscharf dokumentiert, CI/CD‑getrieben und visuell so smooth, dass selbst dein Dozent Gänsehaut bekommt.</p>
+        <div class="cta">
+          <a class="btn primary" href="docs/" target="_self"><i class="fa-solid fa-book-open"></i> Zur Doku</a>
+          <a class="btn ghost" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki" target="_blank" rel="noopener"><i class="fa-solid fa-wand-magic-sparkles"></i> Zum Wiki</a>
+          <a class="btn ghost" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repository</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrapper" style="margin-top:-36px;margin-bottom:12px">
+    <div class="card" style="display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;justify-content:center;padding:12px 16px">
+      <a class="badge" href="#overview"><i class="fa-solid fa-layer-group"></i> Übersicht</a>
+      <a class="badge" href="#setup"><i class="fa-solid fa-bolt"></i> Setup</a>
+      <a class="badge" href="#arch"><i class="fa-solid fa-sitemap"></i> Architektur</a>
+      <a class="badge" href="#docs"><i class="fa-solid fa-book"></i> Docs Navigator</a>
+      <a class="badge" href="#team"><i class="fa-solid fa-users"></i> Team</a>
+      <a class="badge" href="#tech"><i class="fa-solid fa-microchip"></i> Technologien</a>
+    </div>
   </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
 
+  <main class="wrapper">
+    <section id="docs" class="reveal">
+      <h2>📚 Docs Navigator <span class="under"></span></h2>
+      <p class="muted">Direkt zu den wichtigsten Wiki‑Seiten:</p>
+      <div class="grid cols-3" style="margin-top:14px">
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Getting-Started" target="_blank" rel="noopener"><h3>🚀 Getting Started</h3><p>Onboarding, Voraussetzungen & Klonen</p></a>
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Architecture" target="_blank" rel="noopener"><h3>🏗️ Architecture</h3><p>Systemarchitektur, ENV & Diagramme</p></a>
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/API-Reference" target="_blank" rel="noopener"><h3>🧩 API Reference</h3><p>Endpoints, Beispiele, Statuscodes</p></a>
+      </div>
+      <div class="grid cols-3" style="margin-top:14px">
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Troubleshooting" target="_blank" rel="noopener"><h3>🛠️ Troubleshooting</h3><p>Häufige Fehler & Lösungen</p></a>
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Glossary" target="_blank" rel="noopener"><h3>📖 Glossary</h3><p>Begriffe & Abkürzungen</p></a>
+        <a class="card" href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6/wiki/Contributing" target="_blank" rel="noopener"><h3>🤝 Contributing</h3><p>Branch‑Strategie, PRs & Reviews</p></a>
+      </div>
+    </section>
+    <section id="overview">
+      <h2>Übersicht <span class="under"></span></h2>
+      <p class="muted">Unsere Hauptkomponenten – klar getrennt, lose gekoppelt und sauber deploybar.</p>
+      <div class="grid cols-3" style="margin-top:14px">
+        <div class="card"><h3><i class="fa-solid fa-display"></i> Frontend / UI</h3><p>Barrierearm, schnell, modern. State‑Management & Routing, bereit für Production.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-diagram-project"></i> Backend / API</h3><p>REST‑Schnittstellen, Auth, Observability. Versioniert & testgetrieben.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-database"></i> Datenbank</h3><p>Migrationen, Backups & Reproduzierbarkeit. Konsistenz garantiert.</p></div>
+      </div>
+      <div class="grid cols-3" style="margin-top:14px">
+        <div class="card"><h3><i class="fa-solid fa-cloud"></i> Externe Services</h3><p>Auth‑Provider, Data‑APIs & Webhooks – robust mit Timeouts & Retries.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-gears"></i> CI / CD</h3><p>GitHub Actions: Lint → Test → Build → Deploy – bei jedem Commit.</p></div>
+        <div class="card"><h3><i class="fa-solid fa-shield-halved"></i> Qualität</h3><p>Tests, Code‑Review, Security‑Scans & Dependabot.</p></div>
+      </div>
+    </section>
 
+    <section id="setup">
+      <h2>🚀 Schnellstart <span class="under"></span></h2>
+      <div class="card codeblock"><button class="copy" aria-label="Copy">copy</button>
+        <pre><code>git clone https://github.com/HSLU-Exercise/scope-your-project-gruppe-6.git
+cd scope-your-project-gruppe-6
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="scope-your-project-gruppe-6 – Doku" class="md-nav__button md-logo" aria-label="scope-your-project-gruppe-6 – Doku" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+# Installation (je nach Projekttechnologie)
+make setup                       # oder
+pip install -r requirements.txt  # Python
+npm install                      # Node.js
 
-    </a>
-    scope-your-project-gruppe-6 – Doku
-  </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Willkommen
-    
-  </span>
-  
+# Server starten
+make start                       # oder
+npm run start</code></pre>
+      </div>
+      <div class="timeline">
+        <div class="milestone"><strong>Commit</strong> → Lint & Tests laufen automatisch</div>
+        <div class="milestone"><strong>Build</strong> → Artefakte werden versioniert</div>
+        <div class="milestone"><strong>Deploy</strong> → GitHub Pages / Cloud</div>
+      </div>
+    </section>
 
-      </a>
-      
-    </li>
-  
+    <section id="arch">
+      <h2>Systemarchitektur <span class="under"></span></h2>
+      <div class="card">
+        <!-- Minimalistische Inline-Architektur-Grafik -->
+        <svg viewBox="0 0 900 210" width="100%" height="210" aria-label="Architekturdiagramm">
+          <defs>
+            <linearGradient id="gradA" x1="0" x2="1">
+              <stop offset="0%" stop-color="#7c9cfb"/><stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+            <linearGradient id="gradB" x1="0" x2="1">
+              <stop offset="0%" stop-color="#5eead4"/><stop offset="100%" stop-color="#7c9cfb"/>
+            </linearGradient>
+          </defs>
+          <rect x="40" y="50" rx="14" ry="14" width="200" height="70" fill="url(#gradA)" opacity=".9"/>
+          <text x="140" y="92" text-anchor="middle" font-family="Inter" font-weight="800" fill="#070a17">Frontend / UI</text>
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="getting-started/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Schnellstart
-    
-  </span>
-  
+          <rect x="330" y="50" rx="14" ry="14" width="200" height="70" fill="url(#gradB)" opacity=".9"/>
+          <text x="430" y="92" text-anchor="middle" font-family="Inter" font-weight="800" fill="#070a17">API / Backend</text>
 
-      </a>
-    </li>
-  
+          <rect x="620" y="40" rx="16" ry="16" width="220" height="90" fill="#f59e0b" opacity=".8"/>
+          <text x="730" y="92" text-anchor="middle" font-family="Inter" font-weight="800" fill="#070a17">Datenbank</text>
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Architektur
-    
-  </span>
-  
+          <rect x="620" y="140" rx="14" ry="14" width="220" height="50" fill="#ef4444" opacity=".8"/>
+          <text x="730" y="172" text-anchor="middle" font-family="Inter" font-weight="800" fill="#070a17">Externe Services</text>
 
-      </a>
-    </li>
-  
+          <!-- Pfeile -->
+          <g stroke="#e8eef7" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M240,85 C280,85 290,85 330,85" />
+            <path d="M530,85 C570,85 580,85 620,85" />
+            <path d="M530,85 C600,120 600,150 620,165" />
+          </g>
+          <g fill="#e8eef7">
+            <polygon points="330,85 322,80 322,90"/>
+            <polygon points="620,85 612,80 612,90"/>
+            <polygon points="620,165 612,160 612,170"/>
+          </g>
+        </svg>
+        <p class="muted" style="margin-top:8px">Trennung der Verantwortlichkeiten, klare Datenflüsse, Deployment‑freundlich.</p>
+      </div>
+    </section>
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    API
-    
-  </span>
-  
+    <section id="team">
+      <h2>👥 Team <span class="under"></span></h2>
+      <div class="team">
+        <div class="member"><div class="avatar">NB</div><div><div><strong>Nando Manuel Brauchli</strong></div><div class="role">Projektleitung, Dokumentation & Architektur</div></div></div>
+        <div class="member"><div class="avatar">JF</div><div><div><strong>Jan Fischer</strong></div><div class="role">Backend‑Entwicklung, API‑Design</div></div></div>
+        <div class="member"><div class="avatar">JL</div><div><div><strong>Joshua Lipp</strong></div><div class="role">Frontend‑Implementierung, UI/UX</div></div></div>
+        <div class="member"><div class="avatar">FR</div><div><div><strong>Florian Röthlin</strong></div><div class="role">DevOps, CI/CD & Datenbankverwaltung</div></div></div>
+        <div class="member"><div class="avatar">IT</div><div><div><strong>Izmir Trpeza</strong></div><div class="role">Testing, Code‑Qualität & Integrationsprozesse</div></div></div>
+      </div>
+    </section>
 
-      </a>
-    </li>
-  
+    <section id="tech">
+      <h2>🧠 Technologien <span class="under"></span></h2>
+      <div class="grid cols-3">
+        <div class="card"><h3><i class="fa-brands fa-python"></i> Python / Node.js</h3><p>Backend‑Implementierung</p></div>
+        <div class="card"><h3><i class="fa-solid fa-database"></i> PostgreSQL</h3><p>Datenbank</p></div>
+        <div class="card"><h3><i class="fa-solid fa-robot"></i> GitHub Actions</h3><p>CI/CD Pipelines</p></div>
+        <div class="card"><h3><i class="fa-solid fa-book"></i> MKDocs</h3><p>Dokumentation</p></div>
+        <div class="card"><h3><i class="fa-solid fa-file-lines"></i> Markdown</h3><p>Projekt‑Wiki</p></div>
+        <div class="card"><h3><i class="fa-solid fa-gem"></i> Clean Architecture</h3><p>Testbarkeit, Wartbarkeit, Skalierbarkeit</p></div>
+      </div>
+    </section>
+  </main>
 
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="faq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    FAQ
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-<h1 id="willkommen">Willkommen 👋</h1>
-<p>Willkommen in der Projektdokumentation von <strong>scope-your-project-gruppe-6</strong>.<br />
-Hier findest du alles rund um <strong>Architektur, Setup, API und Referenzen</strong>.</p>
-<hr />
-<div class="admonition tip">
-<p class="admonition-title">🔥 Tipp Schnell finden</p>
-<p>Nutze die <strong>Suche oben rechts</strong> und tippe Schlüsselwörter (z. B. <em>Issue</em>, <em>Branch</em>, <em>Token</em>).<br />
-Treffer erscheinen live – <strong>Enter ist nicht nötig.</strong></p>
-</div>
-<hr />
-<div class="admonition rocket">
-<p class="admonition-title">🚀 Schnellstart</p>
-<p><a class="md-button md-button--primary" href="getting-started/">Loslegen</a><br />
-<a class="md-button" href="faq/">FAQ</a><br />
-<a class="md-button" href="architecture/">Architektur</a></p>
-</div>
-<hr />
-<div class="admonition book">
-<p class="admonition-title">📚 Was du hier findest</p>
-<p><strong>Guides &amp; Referenzen</strong> kompakt und suchbar:</p>
-<ul>
-<li><strong>Setup &amp; Onboarding</strong> → <a href="getting-started/">Loslegen</a>  </li>
-<li><strong>Architekturüberblick</strong> → <a href="architecture/">Architektur</a>  </li>
-<li><strong>API Endpunkte</strong> → <a href="api/">API</a>  </li>
-<li><strong>Häufige Fragen</strong> → <a href="faq/">FAQ</a>  </li>
-</ul>
-</div>
-<hr />
-<div class="admonition tip">
-<p class="admonition-title">🔧 Nützliche Tipps</p>
-<ul>
-<li><strong>Kürzer, prägnanter, besser</strong> → eine Seite = ein Thema  </li>
-<li><strong>Aussagekräftige Überschriften (<code>##</code>)</strong> → bessere Treffer in der Suche  </li>
-<li><strong>Code</strong> immer als Block mit Sprache markieren:
-  <div class="highlight"><pre><span></span><code>make<span class="w"> </span>start
-<span class="c1"># oder</span>
-npm<span class="w"> </span>run<span class="w"> </span>start
-</code></pre></div></li>
-</ul>
-</div>
-<hr />
-<div class="admonition link">
-<p class="admonition-title">🔗 Projektlinks</p>
-<ul>
-<li><strong>💻 GitHub</strong>: <a href="https://github.com/HSLU-Exercise/scope-your-project-gruppe-6">Repository</a>  </li>
-<li><strong>🌐 Doku (dieses Portal)</strong>: <code>gh-pages</code> via GitHub Pages  </li>
-<li><strong>⚙️ Build</strong>: Actions → <em>Build and Deploy MkDocs</em></li>
-</ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+  <footer class="wrapper" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div>© 2025 HSLU — Scope Your Project (Gruppe 6). Lern‑ & Demo‑Zwecke.</div>
+    <div style="display:flex;gap:.4rem;flex-wrap:wrap">
+      <img alt="pages" class="badge" src="https://img.shields.io/badge/Pages-deployed-7c9cfb?logo=github"/>
+      <img alt="issues" class="badge" src="https://img.shields.io/badge/Issues-0--open-22c55e"/>
     </div>
-  </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.expand", "content.code.copy"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
-    
-    
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
-      
-    
-  </body>
+  </footer>
+
+  <!-- Back-to-top Button (in DOM schon vorhanden; Script erstellt ihn notfalls dynamisch) -->
+  <button id="toTop" aria-label="Nach oben" title="Nach oben" style="position:fixed;right:16px;bottom:16px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#e8eef7;padding:.7rem .85rem;backdrop-filter:blur(8px);cursor:pointer;display:none"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script>
+    // Alles erst nach DOM-Aufbau initialisieren – verhindert Null-Access Fehler
+    document.addEventListener('DOMContentLoaded', () => {
+      // Copy buttons
+      document.querySelectorAll('.codeblock').forEach(block=>{
+        const btn=block.querySelector('.copy');
+        const code=block.querySelector('pre code');
+        if(btn && code){
+          btn.addEventListener('click',async()=>{
+            try{await navigator.clipboard.writeText(code.innerText);btn.textContent='kopiert';btn.classList.add('ok');setTimeout(()=>{btn.textContent='copy';btn.classList.remove('ok')},1400)}catch(e){btn.textContent='oops'}
+          })
+        }
+      })
+
+      // Hover tilt parallax on cards
+      document.querySelectorAll('.card').forEach(card=>{
+        card.addEventListener('mousemove',e=>{
+          const r=card.getBoundingClientRect();
+          const x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+          const rx=(.5-y)*6, ry=(x-.5)*6;
+          card.style.transform=`translateY(-2px) perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+        });
+        card.addEventListener('mouseleave',()=>{card.style.transform=''});
+      });
+
+      // Stars canvas background (defensiv)
+      const cvs=document.getElementById('stars');
+      if(cvs){
+        const ctx=cvs.getContext('2d'); let w,h,stars=[]; const R=()=>Math.random();
+        function resize(){w=window.innerWidth;h=window.innerHeight;cvs.width=w;cvs.height=h;stars=new Array(180).fill(0).map(()=>({x:R()*w,y:R()*h,s:R()*1.4+0.2,v:R()*0.15+0.02}))}
+        function anim(){ctx.clearRect(0,0,w,h);ctx.fillStyle='rgba(255,255,255,.9)';
+          for(const st of stars){ctx.globalAlpha=st.s;ctx.fillRect(st.x,st.y,1.2,1.2);st.x+=st.v; if(st.x>w) st.x=0}
+          requestAnimationFrame(anim)}
+        resize(); window.addEventListener('resize',resize); anim();
+      }
+
+      // Scroll reveal (mit Fallback)
+      if('IntersectionObserver' in window){
+        const observer=new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');observer.unobserve(e.target);}})
+        },{threshold:.1});
+        document.querySelectorAll('.reveal, section').forEach(el=>observer.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'))
+      }
+
+      // Back to top button – robust: erzeugen, falls nicht vorhanden
+      let toTop=document.getElementById('toTop');
+      if(!toTop){
+        toTop=document.createElement('button');
+        toTop.id='toTop'; toTop.setAttribute('aria-label','Nach oben'); toTop.title='Nach oben';
+        toTop.innerHTML='<i class="fa-solid fa-arrow-up"></i>';
+        Object.assign(toTop.style,{position:'fixed',right:'16px',bottom:'16px',borderRadius:'999px',border:'1px solid rgba(255,255,255,.18)',background:'rgba(255,255,255,.07)',color:'#e8eef7',padding:'.7rem .85rem',backdropFilter:'blur(8px)',cursor:'pointer',display:'none'});
+        document.body.appendChild(toTop);
+      }
+      // Sichtbarkeit und Scroll-Verhalten nur setzen, wenn vorhanden
+      if(toTop){
+        window.addEventListener('scroll',()=>{ toTop.style.display = window.scrollY>600 ? 'block' : 'none'; });
+        toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+      }
+
+      // \"Selbsttests\" (leichte Runtime-Checks)
+      console.assert(!!document.getElementById('toTop'), '#toTop Button existiert');
+      console.assert(!!document.querySelector('section#docs'), '#docs Section existiert');
+      console.assert(!!document.getElementById('stars'), '#stars Canvas existiert');
+    });
+  </script>
+</body>
 </html>
