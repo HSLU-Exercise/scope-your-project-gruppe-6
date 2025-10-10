@@ -66,12 +66,13 @@ scope-your-project-gruppe-6/
 ## 👥 Team  
 | 👤 Name | 💼 Rolle |
 |---------|-----------|
-| **Nando Manuel Brauchli** | Projektleitung, Dokumentation & Architektur |
+| **Nando Manuel Brauchli** | ehemalige Projektleitung, Dokumentation & Architektur |
 | **Jan Fischer** | Backend-Entwicklung, API-Design |
-| **Joshua Lipp** | Frontend-Implementierung, UI/UX |
+| **Joshua Lipp** | ehemalige Frontend-Implementierung, UI/UX |
 | **Florian Röthlin** | DevOps, CI/CD & Datenbankverwaltung |
 | **Izmir Trpeza** | Testing, Code-Qualität & Integrationsprozesse |
-
+| **Robin Ruzza** | Testing, Code-Qualität & Integrationsprozesse |
+| **Sophie Fischer** | Testing, Code-Qualität & Integrationsprozesse |
 ---
 
 ## 🧠 Technologien  
