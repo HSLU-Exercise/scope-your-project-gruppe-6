@@ -12,9 +12,9 @@ Hier findest du alles rund um **Architektur, Setup, API und Referenzen**.
 ---
 
 !!! rocket "🚀 Schnellstart"
-    [Loslegen](getting-started.md){ .md-button .md-button--primary }  
+    [Loslegen](getting-started.md){ .md-button .md-button--primary }
+	[Architektur](architecture.md){ .md-button }
     [FAQ](faq.md){ .md-button }  
-    [Architektur](architecture.md){ .md-button }
 
 ---
 
