@@ -5,6 +5,8 @@ tags: [hilfe, troubleshooting]
 
 # FAQ
 
+Hier finden Sie Lösungen zu möglichen Problemen.
+
 **Build fehlgeschlagen?**  
 → Logs in GitHub Actions prüfen.
 
