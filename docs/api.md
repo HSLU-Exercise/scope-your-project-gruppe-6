@@ -9,4 +9,4 @@ tags: [api, rest]
 `200 OK` – Liste
 
 ## POST /v1/items
-Erstellt ein Item.
+Erstellt ein Item und lädt es.
