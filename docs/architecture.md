@@ -5,7 +5,7 @@ tags: [architektur, overview]
 
 # Architektur (Beispiel)
 
-- Module: API, Worker, Frontend
+- Module: API, Frontend
 - Kommunikation: REST
 - Daten: Postgres
 
